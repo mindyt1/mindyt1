@@ -1,0 +1,29 @@
+#ex1 {
+  width: 800px;
+  height: 250px;
+  position: relative;
+  background-color: black;
+  box-sizing: border-box;
+}
+
+#ex1a {
+  width: 30px;
+  height: 30px;
+  background-color: yellow;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+#ex1:hover {
+  cursor: pointer;
+}
+
+#ex1:hover div {
+  animation: animation1 3s ease-in-out infinite alternate;
+}
+
+@keyframes animation1 {
+  from { left: 0; background-color: yellow;}
+  to { left: calc(100% - 30px); background-color: green;}
+}
