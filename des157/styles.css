@@ -1,4 +1,4 @@
-#ex1 {
+#banner {
   width: 800px;
   height: 250px;
   position: relative;
@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 
-#ex1a {
+#banner1 {
   width: 30px;
   height: 30px;
   background-color: yellow;
@@ -15,11 +15,11 @@
   left: 0;
 }
 
-#ex1:hover {
+#banner:hover {
   cursor: pointer;
 }
 
-#ex1:hover div {
+#banner:hover div {
   animation: animation1 3s ease-in-out infinite alternate;
 }
 
