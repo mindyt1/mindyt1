@@ -3,16 +3,16 @@
   height: 250px;
   position: relative;
   background-color: black;
-  box-sizing: border-box;
+  place-content: center;
+  margin: auto;
 }
 
 #banner1 {
-  width: 30px;
-  height: 30px;
-  background-color: yellow;
+  width: 800px;
+  height: 250px;
+  background-color: #dafd59;
   position: absolute;
-  bottom: 0;
-  left: 0;
+  place-content: center;
 }
 
 #banner:hover {
@@ -20,10 +20,30 @@
 }
 
 #banner:hover div {
-  animation: animation1 3s ease-in-out infinite alternate;
+  animation: animation1 2s infinite alternate;
 }
 
 @keyframes animation1 {
-  from { left: 0; background-color: yellow;}
-  to { left: calc(100% - 30px); background-color: green;}
+  from {background-color: #dafd59;}
+  to {background-color: #ff6ec7;}
+}
+
+body {
+  background-color: black;
+  text-align: center;
+}
+
+header {
+  padding: 50px;
+}
+
+h1 {
+  color: white;
+  font-family: futura std;
+  
+}
+
+h2 {
+  color: white;
+  font-family: futura std;
 }

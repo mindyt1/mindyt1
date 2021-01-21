@@ -1,0 +1,35 @@
+body {
+    background-color: black;
+    margin: 50px;
+    font-family: futura;
+}
+
+h1 {
+    color: #ff6ec7;
+    padding-bottom: 20px;
+    font-size: 40px;
+}
+
+h2 {
+    color: black;
+    background-color: white;
+    padding: 10px;
+}
+
+time {
+    color: white;
+}
+
+p {
+    color: white;
+    line-height: 25px; 
+    text-align: justify;
+    padding-bottom: 10px;
+}
+
+a {
+    color: black;
+    background-color: white;
+    padding: 10px;
+    font-size: 15px;
+}
