@@ -28,6 +28,7 @@
   to {background-color: #ff6ec7;}
 }
 
+
 body {
   background-color: black;
   text-align: center;
@@ -46,4 +47,48 @@ h1 {
 h2 {
   color: white;
   font-family: futura std;
+}
+
+h2:hover {
+  background-color:#ff6ec7;
+}
+
+li a {
+  color: white;
+  font-family: futura;
+  text-decoration-color: #ff9800;
+
+}
+
+.row li a:hover {
+  text-decoration: none;
+}
+
+li {
+  padding: 5px;
+}
+
+.column {
+  float: left;
+  width: 33.3333%;
+  padding: 15px;
+  box-sizing: border-box;
+  border: 1px solid;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#column {
+  transition: all 2s;
+}
+
+#column:hover {
+  font-size: 48px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  color: tomato;
 }
