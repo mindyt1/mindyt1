@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Experimentation</title>
+</head>
+
+<body>
+<h1>What are the Odds?</h1>
+
+// User inputs a number and if the number matches with the random number generator, a dare will appear
+
+<script>
+    function Num() {
+            var userNum = prompt("Enter a number between 1-10", "");
+
+            if(userNum <= 10){
+                for (var i=0; i<10; i++){
+                    console.log(`Here is a ${i}`);
+                }
+            } else if(userNum > 10) {
+                console.log("ERROR: your number is invalid!");
+                );
+            } else {
+                console.log("ERROR: you didn't enter a number!");
+            }
+        }
+
+    function randomInt(min, max) {
+        /* var numOfValues = max - min + 1;
+        var randomNum = Math.random();
+        var randomVal = randomNum * numOfValues;
+        var roundedRandomVal = Math.floor(randomVal);
+        var finalNum = roundedRandomVal + min; */
+
+        return Math.floor((max - min +1) * Math.random()) + min;
+
+        //return finalNum;
+    }
+
+
+</script>
+
+</body>
+</html>

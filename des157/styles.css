@@ -56,8 +56,8 @@ h2:hover {
 li a {
   color: white;
   font-family: futura;
+  background-color: black;
   text-decoration-color: #ff9800;
-
 }
 
 .row li a:hover {
