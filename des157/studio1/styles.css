@@ -73,3 +73,11 @@ img {
     cursor: pointer;
     padding: 8px;
 }
+
+footer {
+    font-family: futura;
+    text-align: right;
+    padding-top: 507px;
+    padding-right: 500px;
+    font-size: 10px;
+}
