@@ -27,9 +27,17 @@ p {
     padding-bottom: 10px;
 }
 
-a {
+.link a {
     color: black;
     background-color: white;
     padding: 10px;
     font-size: 15px;
 }
+
+figcaption {
+    color: #fff;
+    font: italic smaller sans-serif;
+    padding: 20px;
+    text-align: left;
+}
+
