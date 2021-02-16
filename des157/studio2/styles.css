@@ -23,6 +23,12 @@ main li a {
 main img{
     border-radius: 50%;
     padding: 28px; 
+    transform: rotate(0deg);
+}
+
+main img:hover {
+    transform: rotate(360deg) scale(1);
+    transition: all 2s ease-out;
 }
 
 
