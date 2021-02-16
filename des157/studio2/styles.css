@@ -11,18 +11,21 @@ main {
 main li {
     display:inline-block;
     list-style-type: none;
-    padding: 20px;
+    padding: 40px;
 }
 
 main li a {
     text-decoration: none;
     list-style-type: none;
-    padding: 84px;
+    padding: 75px;
+    text-align: center;
+    margin-right: 30px;
 }
 
 main img{
     border-radius: 50%;
-    padding: 28px; 
+    margin-left: 50px;
+    margin-right: 50px;
     transform: rotate(0deg);
 }
 
@@ -38,7 +41,7 @@ main img:hover {
 }
 
 .showing {
-    visibility: show;
+    visibility:visible;
     opacity: 1;
 }
 
@@ -86,4 +89,8 @@ p {
     right: 10px;
     cursor: pointer;
     outline: none;
+}
+
+footer {
+    text-align: center;
 }
