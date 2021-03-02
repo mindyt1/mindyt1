@@ -81,7 +81,7 @@ button {
     display: block;
     margin-right: auto;
     margin-left: auto;
-    position:flex;
+    display:flex;
 }
 
 #score {
@@ -89,6 +89,5 @@ button {
     margin-right: 50px;
     font-size: 30px;
     line-height: normal;
-    padding-top: -50px;
 }
 
