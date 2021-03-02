@@ -1,0 +1,94 @@
+body {
+    font-family: futura std;
+    color: #333;
+    padding: 50px;
+    line-height: 1.5em;
+    background-color: yellow;
+}
+
+img {
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+}
+
+img:hover, .submit:hover {
+    animation: shake 0.5s;
+    animation-iteration-count: inherit;
+    cursor: pointer;
+  }
+
+  @keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+
+body p {
+    padding: 20px;
+    margin-left:50px;
+    margin-right: 50px;
+}
+
+body h1 {
+    text-align: center;
+    font-family: futura;
+    font-size: 50px;
+    padding-bottom: 40px;
+}
+
+audio {
+    display: none;
+}
+
+button { 
+    padding: 10px;
+}
+
+/* div {
+    padding: 20px;
+} */
+
+ #gamecontrol {
+    margin-left:50px;
+    margin-right: 50px;
+}
+
+#game {
+    padding: 50px;
+    margin-left:50px;
+    margin-right: 50px;
+}
+
+#game img {
+    display:inline-table;
+}
+
+#actions {
+    margin-left:50px;
+    margin-right: 50px;
+}
+
+#startgame {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    position:flex;
+}
+
+#score {
+    margin-left:50px;
+    margin-right: 50px;
+    font-size: 30px;
+    line-height: normal;
+    padding-top: -50px;
+}
+

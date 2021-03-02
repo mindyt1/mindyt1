@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game of PIG</title>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+	<link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <h1>Game of PIG</h1>
+    <img src= images/dice.png width=300>
+    <p>There are two players. The player whose turn it is rolls the dice. The total of the roll is added to the current player's score, unless either die comes up as a "one". If this happens, this player's turn is over, and it is the other player’s turn. After each roll, the current player can either roll again, (assuming a "one" was not rolled) or if the current player feels that luck is running thin, they can pass to the other player. The first player to get 30 points or higher wins.</p> 
+    <p>Oh, and if you roll two "ones" (snake eyes), your current score gets zeroed out. So don’t do that.</p>
+
+    <div id="gamecontrol">
+        <!-- <h2>Start a Game</h2> -->
+        <button id="startgame">Start a Game</button>
+    </div>
+
+    <div id="game"></div>
+    <div id="actions"></div>
+    <div id="score"></div>
+
+
+    <script>
+
+        const startGame = document.getElementById('startgame');
+        const gameControl = document.getElementById('gamecontrol');
+        const game = document.getElementById('game');
+        const score = document.getElementById('score');
+        const actionArea = document.getElementById('actions');
+        
+        //audio new variables
+        const diceSound = new Audio ("media/DiceRoll.wav");
+        const applause = new Audio ("media/AudienceClapping.wav");
+
+        const gameData = {
+            dice: ['images/die1.png', 'images/die2.png', 'images/die3.png', 
+                'images/die4.png', 'images/die5.png', 'images/die6.png'],
+            players: ['player 1', 'player 2'],
+            score: [0, 0],
+            roll1: 0,
+            roll2: 0,
+            rollSum: 0,
+            index: 0,
+            gameEnd: 29
+        };
+
+        
+
+        startGame.addEventListener("click", function(){
+            //randomly set game index here...
+            gameControl.innerHTML = '<h2>The Game Has Started</h2>';
+            gameControl.innerHTML += '<button id="quit">Wanna Quit?</button>';
+
+            document.getElementById('quit').addEventListener('click', function(){
+                location.reload();
+            });
+
+            console.log(gameData.index);
+            setUpTurn();
+
+            
+
+        });
+
+        function setUpTurn(){
+            game.innerHTML = `<p>Roll the dice for ${gameData.players[gameData.index]}</p>`;
+            actionArea.innerHTML = '<button id="roll">Roll the Dice</button>';
+            document.getElementById('roll').addEventListener('click', function(){
+                throwDice();
+                diceSound.play();
+            });
+
+            
+            
+        }
+
+        function throwDice(){
+            actionArea.innerHTML = '';
+            gameData.roll1 = Math.floor(Math.random()*6)+1;
+            gameData.roll2 = Math.floor(Math.random()*6)+1;
+            game.innerHTML = `<p>Roll the dice for the ${gameData.players[gameData.index]}</p>`;
+            game.innerHTML += `<img src= "${gameData.dice[gameData.roll1 -1]}">
+                                <img src = "${gameData.dice[gameData.roll2-1]}">`;
+            gameData.rollSum= gameData.roll1 + gameData.roll2;
+            console.log(gameData);
+            diceSound.play();
+
+            if (gameData.rollSum === 2){
+                game.innerHTML += '<p>Oh snap! Snake eyes!</p>';
+                gameData.score[gameData.index] = 0;
+                gameData.index ? (gameData.index = 0) : (gameData.index = 1);
+                showCurrentScore();
+                setTimeout(setUpTurn, 2000);
+                diceSound.play();
+
+            } else if (gameData.roll1 === 1 || gameData.roll2 === 1){
+                gameData.index ? (gameData.index=0) : (gameData.index = 1);
+                game.innerHTML += `<p>Sorry one of your rolls was a one. Switching to ${gameData.players[gameData.index]}</p>`;
+                setTimeout(setUpTurn, 2000);
+                diceSound.play();
+                //switch player
+                //set up turn
+
+            } else {
+                
+                gameData.score[gameData.index] = gameData.score[gameData.index] + gameData.rollSum;
+                actionArea.innerHTML = '<button id = "rollagain">Roll again</button> or <button id = "pass">Pass</button>';
+
+                document.getElementById('rollagain').addEventListener('click', function(){
+                    setUpTurn();
+                    diceSound.play();
+                });
+
+                document.getElementById('pass').addEventListener('click', function(){
+                    gameData.index ? (gameData.index = 0) : (gameData.index = 1);
+                    setUpTurn();
+                });
+
+                checkWinningCondition();
+                
+            }
+        }
+
+        function checkWinningCondition(){
+            if(gameData.score[gameData.index] > gameData.gameEnd){
+                score.innerHTML = `<h2>${gameData.players[gameData.index]}
+                    wins with ${gameData.score[gameData.index]} points!</h2>`;
+                    actionArea.innerHTML = '';
+
+                    document.getElementById('quit').innerHTML = "Start a New Game?";
+                    applause.play();
+                    
+            }
+            else{
+                /* score.innerHTML = `<p>The score is currently <strong>${gameData.players[0]}
+                    ${gameData.score[0]}</strong> and <strong>${gameData.players[1]}
+                        ${gameData.score[1]}</strong></p>`;    */
+                showCurrentScore();
+            }
+        }
+
+        function showCurrentScore() {
+            score.innerHTML = `<p>The score is currently: <br> <strong>${gameData.players[0]} ${gameData.score[0]}</strong> 
+                <br> <strong>${gameData.players[1]} ${gameData.score[1]}</strong>.</p>`;
+        }
+
+    
+    </script>
+
+    <footer>
+        <p>Contact:<a href="mailto:mbtran@ucdavis.edu">mbtran@ucdavis.edu</a>
+            <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fmindyt1.github.io%2Fdes157%2Fstudio2%2Findex.html">HTML</a>
+            <a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fmindyt1.github.io%2Fdes157%2Fstudio2%2Findex.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en">CSS</a>
+        </p>
+    </footer>
+    
+</body>
+</html>
