@@ -1,3 +1,31 @@
 body {
-    background-color: #d6e2e9;
+    background-color: #d7e3fc;
+    font-family: futura std;
+    padding-left: 20px;
 }
+
+.accordion {
+    font-family: futura std;
+    font-weight: normal;
+    background-color: #c1d3fe;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    padding: 25px;
+    width: 95%;
+    text-align: left;
+    font-size: 18px;
+    transition: 0.4s;
+  }
+  
+  .active, .accordion:hover {
+    background-color: #abc4ff; 
+  }
+  
+  .panel {
+    padding: 0 18px;
+    display: none;
+    background-color: #edf2fb;
+    overflow: hidden;
+    width: 92%;
+  }
