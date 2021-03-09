@@ -1,0 +1,130 @@
+@font-face {font-family: Monument Extended; font-weight: bold; src: url('usertest/MonumnetExtended-Black.otf')}
+@font-face {font-family: PP Woodland; font-weight: bold; src: url('usertest/PPWoodland-Bold.otf')}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #dd4e29;
+}
+
+h1 {
+    font-family: Monument Extended;
+    font-size: 80px;
+    text-align: right;
+    margin-top: 30%;
+    padding-right: 50px;
+
+}
+
+.column {
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    padding: 15px;
+    height: 1000px;
+  }
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display:inline-block;
+    list-style-type: none;
+    padding: 40px;
+    width: 200px;
+}
+
+li a {
+    text-decoration: none;
+    list-style-type: none;
+    padding: 75px;
+    text-align: center;
+    margin-right: 30px;
+    font-family: PP Woodland;
+    display: block;
+}
+
+
+img{
+    border-radius: 50%;
+    margin-left: 50px;
+    margin-right: 50px;
+    transform: rotate(0deg);
+}
+
+img:hover {
+    transform: rotate(360deg) scale(1);
+    transition: all 2s ease-out;
+}
+
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.showing {
+    visibility:visible;
+    opacity: 1;
+}
+
+.overlay {
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    transition-property: visibility, opacity;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+}
+
+.overlay article {
+    box-sizing: border-box;
+    background-color: #e9edc9;
+    padding: 20px;
+    width: 50vw;
+    height: 80vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow-y: scroll;
+}
+
+.overlay article h2 {
+    color: #7f5539;
+}
+
+p {
+    font-family:'Courier New', Courier, monospace;
+}
+
+.corner {
+    font-size: 36px;
+    margin: 0;
+    padding: 0;
+    border:none;
+    background-color: transparent;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    outline: none;
+}
+
+footer {
+    text-align: center;
+}
