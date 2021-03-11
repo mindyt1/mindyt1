@@ -4,6 +4,13 @@ body {
     padding-left: 20px;
 }
 
+.three{
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 18%;
+}
+
 .accordion {
     font-family: futura std;
     font-weight: normal;
@@ -28,4 +35,27 @@ body {
     background-color: #edf2fb;
     overflow: hidden;
     width: 92%;
+  }
+
+  .observations {
+    background-color: white;
+    width: 900px;
+    
+  }
+
+  .observations li {
+    padding: 20px;
+    margin-right: 80px;
+    margin-left: 80px;
+    font-size: 16px;
+    line-height: 1.5em;
+  }
+
+  h3 {
+    text-align: center;
+    font-size: 30px;
+    margin: auto;
+    padding-top: 20px; 
+    padding-bottom: 20px;
+    width: 800px;
   }
