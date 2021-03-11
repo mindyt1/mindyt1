@@ -1,5 +1,3 @@
-@font-face {font-family: Monument Extended; font-weight: bold; src: url('usertest/MonumnetExtended-Black.otf')}
-@font-face {font-family: PP Woodland; font-weight: bold; src: url('usertest/PPWoodland-Bold.otf')}
 
 * {
     box-sizing: border-box;
@@ -10,12 +8,12 @@ body {
 }
 
 h1 {
-    font-family: Monument Extended;
+    font-family: Zilla Slab;
     font-size: 80px;
-    text-align: right;
+    text-align:right;
     margin-top: 30%;
-    padding-right: 50px;
-
+    padding-left: 350px;
+    padding-right: 60px;
 }
 
 .column {
@@ -23,7 +21,8 @@ h1 {
     width: 50%;
     box-sizing: border-box;
     padding: 15px;
-    height: 1000px;
+    height: 800px;
+    background-repeat: no-repeat;
   }
 
 .row:after {
@@ -34,24 +33,24 @@ h1 {
 
 ul{
     list-style-type: none;
-    margin: 0;
-    padding: 0;
+    padding-left: 20px;
+    margin-top: 20%;
 }
 
 li {
     display:inline-block;
     list-style-type: none;
-    padding: 40px;
     width: 200px;
+    
 }
 
 li a {
     text-decoration: none;
     list-style-type: none;
-    padding: 75px;
-    text-align: center;
+    text-align: left;
+    padding-top: 50px;
     margin-right: 30px;
-    font-family: PP Woodland;
+    font-family: Zilla Slab;
     display: block;
 }
 
@@ -95,7 +94,7 @@ img:hover {
     box-sizing: border-box;
     background-color: #e9edc9;
     padding: 20px;
-    width: 50vw;
+    width: 60vw;
     height: 80vh;
     position: absolute;
     top: 50%;
@@ -123,6 +122,23 @@ p {
     right: 10px;
     cursor: pointer;
     outline: none;
+}
+
+#one, #two, #three {
+    font-size: 50px;
+    color: #664965;
+}
+
+#one:hover {
+    font-size: 800%;
+}
+
+#two:hover {
+    font-size: 800%; 
+}
+
+#three:hover {
+    font-size: 800%;
 }
 
 footer {
